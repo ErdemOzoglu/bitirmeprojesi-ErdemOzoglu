@@ -28,14 +28,15 @@ public class Product extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private ProductType productType;
 
-    //@Min(1)
-    @Column(name = "FIRST_PRICE")
+    @Min(1)
+    @Column(name = "FIRST_PRICE",nullable = false)
     private BigDecimal firstPrice;
 
-    //@Min(1)
+    @Min(1)
     @Column(name = "LAST_PRICE")
     private BigDecimal lastPrice;
 
+    @Min(0)
     @Column(name = "KDV_RATE")
     private BigDecimal kdvRate;
 

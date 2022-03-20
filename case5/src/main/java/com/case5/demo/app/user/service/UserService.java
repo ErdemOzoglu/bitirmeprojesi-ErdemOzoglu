@@ -6,6 +6,7 @@ import com.case5.demo.app.user.dto.UserUpdateRequestDto;
 import com.case5.demo.app.user.entity.User;
 import com.case5.demo.app.user.service.entityservice.UserEntityService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,10 +14,15 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final UserEntityService userEntityService;
+    private final PasswordEncoder passwordEncoder;
 
     public UserDto save(UserDto userDto){
 
         User user = UserConverter.INSTANCE.convertToUser(userDto);
+
+        String password = passwordEncoder.encode(user.getPassword());
+
+        user.setPassword(password);
 
         user = userEntityService.save(user);
 

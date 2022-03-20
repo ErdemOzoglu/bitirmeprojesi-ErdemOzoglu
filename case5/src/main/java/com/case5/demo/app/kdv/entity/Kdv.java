@@ -25,7 +25,7 @@ public class Kdv  {
     @Enumerated(EnumType.STRING)
     private ProductType productType;
 
-    //@Min(0)
+    @Min(0)
     @Column(name = "KDV_RATE")
     private BigDecimal kdvRate;
 }

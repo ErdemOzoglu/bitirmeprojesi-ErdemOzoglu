@@ -15,10 +15,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import java.util.Date;
 
-/**
- * @author Bahadır Memiş
- * @since 1.0.0
- */
+
 @RestController
 @ControllerAdvice
 public class GenCustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {

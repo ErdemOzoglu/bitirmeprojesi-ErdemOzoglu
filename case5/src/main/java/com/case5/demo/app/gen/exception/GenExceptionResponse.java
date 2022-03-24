@@ -5,10 +5,7 @@ import lombok.Data;
 
 import java.util.Date;
 
-/**
- * @author Bahadır Memiş
- * @since 1.0.0
- */
+
 @Data
 @AllArgsConstructor
 public class GenExceptionResponse {

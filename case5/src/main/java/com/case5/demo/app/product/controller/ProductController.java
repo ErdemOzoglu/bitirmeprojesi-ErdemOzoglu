@@ -1,6 +1,7 @@
 package com.case5.demo.app.product.controller;
 
 import com.case5.demo.app.gen.dto.RestResponse;
+import com.case5.demo.app.product.dto.ProductDetailDto;
 import com.case5.demo.app.product.dto.ProductDto;
 import com.case5.demo.app.product.dto.ProductSaveRequestDto;
 import com.case5.demo.app.product.dto.ProductUpdateRequestDto;
@@ -67,6 +68,22 @@ public class ProductController {
     public  ResponseEntity findAllByProductType(@PathVariable ProductType productType){
 
         List<ProductDto> productDtoList = productService.findAllByProductType(productType);
+
+        return ResponseEntity.ok(RestResponse.of(productDtoList));
+    }
+
+    @GetMapping("/productDetails")
+    public ResponseEntity getAllProductDetails(){
+
+        List<ProductDetailDto> detailDtoList = productService.getAllProductDetails();
+
+        return ResponseEntity.ok(RestResponse.of(detailDtoList));
+    }
+
+    @GetMapping("/productsFilterByPrice")
+    public ResponseEntity getProductsByLastPriceBetween(@RequestParam BigDecimal minPrice,@RequestParam BigDecimal maxPrice){
+
+        List<ProductDto> productDtoList = productService.getProductsByLastPriceBetween(minPrice,maxPrice);
 
         return ResponseEntity.ok(RestResponse.of(productDtoList));
     }

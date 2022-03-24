@@ -1,6 +1,5 @@
 package com.case5.demo.app.gen.service;
 
-//import com.case5.demo.app.crd.dao.CrdCreditCardActivityDao;
 import com.case5.demo.app.gen.entity.BaseAdditionalFields;
 import com.case5.demo.app.gen.entity.BaseEntity;
 import com.case5.demo.app.gen.enums.GenErrorMessage;
@@ -18,10 +17,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * @author Bahadır Memiş
- * @since 1.0.0
- */
 @Service
 @RequiredArgsConstructor
 public abstract class BaseEntityService<E extends BaseEntity, D extends JpaRepository<E, Long>> {

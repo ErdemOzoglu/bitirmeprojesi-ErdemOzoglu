@@ -1,18 +1,12 @@
 package com.case5.demo.app.gen.util;
 
-import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.Calendar;
 import java.util.Date;
 
-/**
- * @author Bahadır Memiş
- * @since 1.0.0
- */
 public class DateUtil {
 
     public static LocalDate convertToLocalDate(Date dateToConvert) {

@@ -11,10 +11,6 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.util.Date;
 
-/**
- * @author Bahadır Memiş
- * @since 1.0.0
- */
 @Embeddable
 @Getter
 @Setter

@@ -7,10 +7,6 @@ import javax.persistence.Embedded;
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
-/**
- * @author Bahadır Memiş
- * @since 1.0.0
- */
 @MappedSuperclass
 @Getter
 @Setter

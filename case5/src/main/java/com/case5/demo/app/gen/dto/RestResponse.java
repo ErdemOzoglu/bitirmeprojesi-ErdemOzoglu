@@ -7,10 +7,6 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @author Bahadır Memiş
- * @since 1.0.0
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

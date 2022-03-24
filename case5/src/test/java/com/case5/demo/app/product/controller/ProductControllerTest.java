@@ -1,10 +1,9 @@
 package com.case5.demo.app.product.controller;
 
-import com.case5.demo.DemoApplication;
 import com.case5.demo.app.gen.BaseTest;
 import com.case5.demo.app.product.dto.ProductSaveRequestDto;
+import com.case5.demo.app.product.dto.ProductUpdateRequestDto;
 import com.case5.demo.app.product.enums.ProductType;
-import com.case5.demo.config.H2TestProfileJPAConfig;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,12 +21,11 @@ import org.springframework.web.context.WebApplicationContext;
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(MockitoExtension.class)
-@SpringBootTest(classes = {DemoApplication.class, H2TestProfileJPAConfig.class})
+@SpringBootTest()
 class ProductControllerTest extends BaseTest {
 
     private static final String BASE_PATH = "/api/v1/product";
@@ -65,11 +63,48 @@ class ProductControllerTest extends BaseTest {
     }
 
     @Test
-    void update() {
+    void update() throws Exception {
+
+        ProductUpdateRequestDto productUpdateRequestDto = new ProductUpdateRequestDto();
+        productUpdateRequestDto.setId(253L);
+        productUpdateRequestDto.setProductName("Jbl Kulaklik");
+        productUpdateRequestDto.setProductType(ProductType.TEKLONOJI);
+        productUpdateRequestDto.setFirstPrice(BigDecimal.valueOf(560L));
+
+
+        String content = objectMapper.writeValueAsString(productUpdateRequestDto);
+
+        MvcResult result = mockMvc.perform(
+                put(BASE_PATH).content(content).contentType(MediaType.APPLICATION_JSON)
+        ).andExpect(status().isOk()).andReturn();
+
+        boolean isSuccess = isSuccess(result);
+
+        assertTrue(isSuccess);
     }
 
     @Test
-    void delete() {
+    void deleteTest() throws Exception {
+
+        MvcResult result = mockMvc.perform(
+                delete(BASE_PATH + "/252").content("252").contentType(MediaType.APPLICATION_JSON)
+        ).andExpect(status().isOk()).andReturn();
+
+        boolean isSuccess = isSuccess(result);
+
+        assertTrue(isSuccess);
+    }
+
+    @Test
+    void shouldNoDeleteWhenIdDoesNotExist() throws Exception {
+
+        MvcResult result = mockMvc.perform(
+                delete(BASE_PATH + "/9999").content("9999").contentType(MediaType.APPLICATION_JSON)
+        ).andExpect(status().isNotFound()).andReturn();
+
+        boolean isSuccess = isSuccess(result);
+
+        assertFalse(isSuccess);
     }
 
     @Test

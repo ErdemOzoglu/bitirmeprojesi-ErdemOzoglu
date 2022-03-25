@@ -1,3 +1,41 @@
+> **Konu:**
+- Bir marketteki ürünlerin satış fiyatlarına göre son fiyatlarını belirleyen servisin Spring Boot Framework
+kullanılarak yazılması ve isteğe bağlı olarak önyüzünün yazılması.
+-------------------------------------------------------------------------
+> **İçerik:**
+
+- Projenin backend tarafı Java Spring ile yazilmiştir.
+- Projenin Frondend tarafı Vue ile yazilmiştir.
+- Projede Database için Postgresql kullanılmıştır.
+-----------------------------------------------------------------------------------------
+- Proje kullanılmaya başlamadan önce ilk KDV değerlerinin atanabilmesi için 2 yol izlenebilir.
+1. Api üzerinden api/v1/kdv adresine post isteği ile ilk değerler atanabilmektedir.
+2. Postgresql üzerinde aşağıda belirtilen script satırları çalıştırılmalıdır. 
+
+- INSERT INTO kdv (id,kdv_rate,product_type) VALUES (1,1,'GIDA');
+- INSERT INTO kdv (id,kdv_rate,product_type) VALUES (2,8,'KIRTASIYE');
+- INSERT INTO kdv (id,kdv_rate,product_type) VALUES (3,8,'GIYECEK');
+- INSERT INTO kdv (id,kdv_rate,product_type) VALUES (4,18,'TEKLONOJI');
+- INSERT INTO kdv (id,kdv_rate,product_type) VALUES (5,18,'TEMIZLIK');
+- INSERT INTO kdv (id,kdv_rate,product_type) VALUES (6,18,'DIGER');
+- ---------------------------------------------------------------------------------
+- Open API Specification olarak Swagger kullanılmıştır. Swagger üzerinden projeyi incelemek için [Tıklayınız](http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/)
+
+- ---------------------------------------------------------------------------------
+- Projenin isterler dökümanı aşağıdaki gibidir.
+- ---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
 # Bitirme Projesi
 
 Projenin Konusu:

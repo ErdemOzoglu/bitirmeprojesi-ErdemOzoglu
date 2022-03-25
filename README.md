@@ -19,6 +19,16 @@ kullanılarak yazılması ve isteğe bağlı olarak önyüzünün yazılması.
 - INSERT INTO kdv (id,kdv_rate,product_type) VALUES (5,18,'TEMIZLIK');
 - INSERT INTO kdv (id,kdv_rate,product_type) VALUES (6,18,'DIGER');
 - ---------------------------------------------------------------------------------
+- Frond end tarafı için NPM paketlerinin yüklenmesi için;
+```
+npm install
+```
+- Çalıştırabilmek için ise;
+ ```
+npm run serve
+```
+- Satırlarının terminalde koşturulması gerekir.
+-------------------------------------------------------------------------
 - Open API Specification olarak Swagger kullanılmıştır. Swagger üzerinden projeyi incelemek için [Tıklayınız](http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/)
 
 - ---------------------------------------------------------------------------------

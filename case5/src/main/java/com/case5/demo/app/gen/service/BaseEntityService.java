@@ -89,9 +89,6 @@ public abstract class BaseEntityService<E extends BaseEntity, D extends JpaRepos
         return entity;
     }
 
-    public boolean existsById(Long id){
-        return dao.existsById(id);
-    }
 
     public D getDao() {
         return dao;
@@ -102,13 +99,6 @@ public abstract class BaseEntityService<E extends BaseEntity, D extends JpaRepos
         return currentCustomerId;
     }
 
-    protected PageRequest getPageRequest(Optional<Integer> pageOptional, Optional<Integer> sizeOptional) {
-        Integer page = getPage(pageOptional);
-        Integer size = getSize(sizeOptional);
-
-        PageRequest pageRequest = PageRequest.of(page, size);
-        return pageRequest;
-    }
 
     protected Integer getSize(Optional<Integer> sizeOptional) {
 

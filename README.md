@@ -4,8 +4,8 @@ kullanılarak yazılması ve isteğe bağlı olarak önyüzünün yazılması.
 -------------------------------------------------------------------------
 > **İçerik:**
 
-- Projenin backend tarafı Java Spring ile yazilmiştir.
-- Projenin Frondend tarafı Vue ile yazilmiştir.
+- Projenin Backend tarafı Java Spring ile yazilmiştir.
+- Projenin Frontend tarafı Vue ile yazilmiştir.
 - Projede Database için Postgresql kullanılmıştır.
 -----------------------------------------------------------------------------------------
 - Proje kullanılmaya başlamadan önce ilk KDV değerlerinin atanabilmesi için 2 yol izlenebilir.
@@ -19,7 +19,7 @@ kullanılarak yazılması ve isteğe bağlı olarak önyüzünün yazılması.
 - INSERT INTO kdv (id,kdv_rate,product_type) VALUES (5,18,'TEMIZLIK');
 - INSERT INTO kdv (id,kdv_rate,product_type) VALUES (6,18,'DIGER');
 - ---------------------------------------------------------------------------------
-- Frond end tarafı için NPM paketlerinin yüklenmesi için;
+- Frontend tarafı için NPM paketlerinin yüklenmesi için;
 ```
 npm install
 ```
@@ -34,8 +34,8 @@ npm run serve
 - ---------------------------------------------------------------------------------
 - Projenin isterler dökümanı aşağıdaki gibidir.
 - ---------------------------------------------------------------------------------
-
-
+- ***Projenin Frontend kısmı tamamlanmamıştır. Geliştirmesine devam edilecektir. Geliştirilen Backend uygulamasının tüm işlevlerini [Swagger](http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/) üzerinden deneyebilirsiniz.***
+- ---------------------------------------------------------------------------------
 
 
 
